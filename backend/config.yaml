@@ -1,0 +1,19 @@
+data:
+  data_dir: "data/subset_pcam"
+  image_size: 96
+  batch_size: 32
+  num_workers: 0 # Windows sometimes has issues with multiprocessing in torch DataLoader
+
+model:
+  type: "resnet_transfer" # options: "baseline_cnn", "resnet_transfer"
+  num_classes: 1 # binary classification using BCEWithLogitsLoss
+
+training:
+  epochs: 5
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  device: "cuda" # or "cpu"
+  threshold: 0.5 # decision threshold for classifying as cancer
+
+mlflow:
+  experiment_name: "Oncographer_Training"

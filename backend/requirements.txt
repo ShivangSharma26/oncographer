@@ -1,0 +1,14 @@
+torch>=2.0.0
+torchvision>=0.15.0
+numpy
+pandas
+pillow
+scikit-learn
+mlflow
+fastapi
+uvicorn
+python-multipart
+albumentations
+tqdm
+matplotlib
+pyyaml
