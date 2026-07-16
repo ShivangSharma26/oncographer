@@ -1,0 +1,43 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.env
+venv/
+.venv
+
+# Node / React
+node_modules/
+frontend/dist/
+frontend/node_modules/
+npm-debug.log*
+
+# Mac
+.DS_Store
+
+# Data / Artifacts (Optional depending on if you want to push data)
+# Commenting out data folders so the model file is uploaded
+# backend/data/
+# backend/mlruns/
