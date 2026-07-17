@@ -14,8 +14,10 @@ RUN npm run build
 FROM python:3.11-slim
 WORKDIR /app
 
-# Install system dependencies required for OpenCV and PyTorch
+# Install system dependencies required for OpenCV, PyTorch, and compiling wheels (gcc)
 RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
     libgl1 \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
