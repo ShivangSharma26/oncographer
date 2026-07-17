@@ -20,7 +20,10 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install backend dependencies
+# Install PyTorch CPU version explicitly to save massive RAM/Disk space on free tiers
+RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+# Install remaining backend dependencies (ensure torch is removed or satisfied)
 COPY backend/requirements.txt ./backend/
 RUN pip install --no-cache-dir -r backend/requirements.txt
 
