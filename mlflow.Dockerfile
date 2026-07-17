@@ -8,5 +8,5 @@ RUN pip install --no-cache-dir mlflow
 COPY mlflow.db ./
 COPY backend/mlruns/ ./backend/mlruns/
 
-# Start MLflow Server with 1 worker and bypass all security/CORS checks
-CMD mlflow server --host 0.0.0.0 --port ${PORT:-10000} --workers 1 --backend-store-uri sqlite:///mlflow.db --serve-artifacts --default-artifact-root ./backend/mlruns --allowed-hosts '*'
+# Start MLflow Server with 1 worker and explicit allowed host to prevent wildcard expansion errors
+CMD mlflow server --host 0.0.0.0 --port ${PORT:-10000} --workers 1 --backend-store-uri sqlite:///mlflow.db --serve-artifacts --default-artifact-root ./backend/mlruns --allowed-hosts oncographer-mlflow.onrender.com
